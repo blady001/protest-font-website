@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
+/* ------------------- Variables ------------------------ */
+
+:root {
+
+    /* font family */
+    --font-source-code-pro: 'Source Code Pro', monospace;
+}
+
+/* ------------------- /Variables ------------------------ */
+
+/* ------------------- Global Classes ------------------------ */
+.font-source-code-pro {
+    font-family: var(--font-source-code-pro);
+}
+
+.container {
+    width: 100%;
+}
+
+.container-fluid {
+    width: 98%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-initial {
+    flex: 0 1 auto;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+/* ------------------- /Global Classes ------------------------ */
+/* ------------------- Media Query ------------------------ */
+
+/* for large screen sm (640px) */
+@media (min-width: 640px) {
+    .container{
+        max-width: 640px;
+    }
+}
+
+/* for large screen md (768px) */
+@media (min-width: 768px) {
+    .container{
+        max-width: 768px;
+    }
+}
+
+/* for large screen lg (1024px) */
+@media (min-width: 1024px) {
+    .container{
+        max-width: 1024px;
+    }
+
+    #nav .toggle-btn > button{
+        display: none;
+    }
+
+    #nav{
+        flex-direction: row !important;
+    }
+
+    .collapse{
+        max-height: initial !important;
+    }
+
+    .collapse ul{
+        flex-direction: row !important;
+    }
+
+    .active{
+        max-height: 100% !important;
+    }
+
+}
+
+/* for large screen xl (1280px) */
+@media (min-width: 1280px) {
+    .container{
+        max-width: 1280px;
+    }
+
+    #nav{
+        background: transparent !important;
+    }
+
+    #nav .flex-initial ul button{
+        display: inline-block !important;
+    }
+
+}
+
+/* ------------------- /Media Query ------------------------ */
+
+/* ------------------- Navigation Style ------------------------ */
+#nav{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    /* padding: 1rem 1.5rem;
+    background: var(--text-light); */
+    flex-direction: column;
+}
+
+#nav .collapse{
+    max-height: 0px;
+    overflow-y: hidden;
+    transition: all 0.9s ease;
+}
+
+#nav .collapse ul{
+    flex-direction: column;
+    text-align: center;
+    /* padding: 0 3rem; */
+}
+
+/*
+#nav .collapse ul > li{
+   padding: 0 1.5rem;
+   line-height: 3rem;
+   font-size: 1.1em;
+}
+*/
+
+/* 
+ * TODO: MENU BUTTON - position here
+#nav .toggle-btn > button{
+    font-size: 2em;
+    position: absolute;
+    right: 0; top: 0;
+    padding: 1rem;
+    color: var(--text-dark2);
+}
+*/
+
+#nav .flex-initial ul button{
+    display: none;
+}
+
+.active{
+    max-height: 50vh !important;
+}
+
+
+/* ------------------- /Navigation Style ------------------------ */
