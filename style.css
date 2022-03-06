@@ -8,6 +8,25 @@
     --font-source-code-pro: 'Source Code Pro', monospace;
 }
 
+* > * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url("assets/background-sm.png");
+    background-repeat: repeat;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+}
+
 /* ------------------- /Variables ------------------------ */
 
 /* ------------------- Global Classes ------------------------ */
@@ -81,6 +100,8 @@
 
     #nav{
         flex-direction: row !important;
+        height: 120px;
+        align-items: center;
     }
 
     .collapse{
@@ -103,9 +124,11 @@
         max-width: 1280px;
     }
 
+    /*
     #nav{
         background: transparent !important;
     }
+    */
 
     #nav .flex-initial ul button{
         display: inline-block !important;
@@ -116,49 +139,54 @@
 /* ------------------- /Media Query ------------------------ */
 
 /* ------------------- Navigation Style ------------------------ */
-#nav{
-    position: absolute;
+#nav {
+    /* position: absolute; */
+    position: fixed;
     top: 0; left: 0;
     width: 100%;
     /* padding: 1rem 1.5rem;
     background: var(--text-light); */
+    background-image: url("assets/background-sm.png");
+    background-repeat: repeat;
     flex-direction: column;
 }
 
-#nav .collapse{
+#nav .collapse {
     max-height: 0px;
     overflow-y: hidden;
     transition: all 0.9s ease;
 }
 
-#nav .collapse ul{
+#nav .collapse ul {
     flex-direction: column;
     text-align: center;
     /* padding: 0 3rem; */
 }
 
-/*
-#nav .collapse ul > li{
+#nav .collapse ul > li {
    padding: 0 1.5rem;
    line-height: 3rem;
    font-size: 1.1em;
+   flex-grow: 1;
 }
-*/
 
-/* 
- * TODO: MENU BUTTON - position here
-#nav .toggle-btn > button{
+#nav .collapse ul > li > a {
+    color: black;
+}
+
+#nav .toggle-btn > button {
     font-size: 2em;
     position: absolute;
     right: 0; top: 0;
     padding: 1rem;
-    color: var(--text-dark2);
+    /* color: var(--text-dark2); */
 }
-*/
 
+/*
 #nav .flex-initial ul button{
     display: none;
 }
+*/
 
 .active{
     max-height: 50vh !important;
