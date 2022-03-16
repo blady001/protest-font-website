@@ -4,8 +4,28 @@
 
 :root {
 
+    /* colors */
+    --color-protest-red: #CD192F;
+
     /* font family */
     --font-source-code-pro: 'Source Code Pro', monospace;
+    --font-protest: 'ProtestFont';
+
+    /* images */
+    --bg-noise: url("assets/background-sm.png");
+    --bg-banner: url("assets/banner.jpg");
+    --pepe-test: url("assets/pepe-test.jpeg");
+
+    /* dimensions */
+    --nav-default-height: 120px;
+
+}
+
+@font-face {
+    font-family: 'ProtestFont';
+    src: url('/assets/ProtestFont-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
 }
 
 * > * {
@@ -15,7 +35,7 @@
 }
 
 body {
-    background-image: url("assets/background-sm.png");
+    background-image: var(--bg-noise);
     background-repeat: repeat;
 }
 
@@ -71,6 +91,12 @@ ul{
     background-color: transparent;
     cursor: pointer;
 }
+
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* ------------------- /Global Classes ------------------------ */
 /* ------------------- Media Query ------------------------ */
 
@@ -90,37 +116,62 @@ ul{
 
 /* for large screen lg (1024px) */
 @media (min-width: 1024px) {
-    .container{
+    .container {
         max-width: 1024px;
     }
 
-    #nav .toggle-btn > button{
+    #nav .toggle-btn > button {
         display: none;
     }
 
-    #nav{
+    #nav {
         flex-direction: row !important;
-        height: 120px;
+        height: var(--nav-default-height);
         align-items: center;
     }
 
-    .collapse{
+    .collapse {
         max-height: initial !important;
     }
 
-    .collapse ul{
+    .collapse ul {
         flex-direction: row !important;
     }
 
-    .active{
+    .active {
         max-height: 100% !important;
     }
 
+    #site-main .banner-area {
+        padding-top: var(--nav-default-height);
+        /*
+        background-size: auto 70% !important;
+        background-position-y: var(--nav-default-height) !important;
+        /*background-position-y: 150px !important;*/
+        background: none !important;
+    }
+
+    #banner-img {
+        display: block !important;
+    }
+
+    #banner-title {
+        display: none !important;
+    }
+
+    #site-main .flex-column {
+        justify-content: space-between !important;
+    }
+    /*
+    #site-main .banner-area .banner-title {
+        font-size: 10em !important;
+    }
+    */
 }
 
 /* for large screen xl (1280px) */
 @media (min-width: 1280px) {
-    .container{
+    .container {
         max-width: 1280px;
     }
 
@@ -130,7 +181,7 @@ ul{
     }
     */
 
-    #nav .flex-initial ul button{
+    #nav .flex-initial ul button {
         display: inline-block !important;
     }
 
@@ -194,3 +245,69 @@ ul{
 
 
 /* ------------------- /Navigation Style ------------------------ */
+
+/* ------------------- Banner Area Style ------------------------ */
+#site-main .banner-area{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* padding-top: var(--nav-default-height); */
+    background: var(--pepe-test) no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    /* TODO: Add below in media query? */
+    /* background-size: auto 70%;
+    /* background-position-y: var(--nav-default-height);
+    z-index: -99;
+    */
+    z-index: -99;
+}
+
+/*
+#site-main .flex-column {
+    align-content: space-between;
+}
+*/
+
+#banner-img {
+    display: none;
+}
+
+#banner-title {
+    position: absolute;
+    top: 15vh;
+    left: auto;
+
+    color: var(--color-protest-red);
+    font-family: var(--font-protest);
+    font-size: min(23vw, 10em);
+}
+
+#site-main .container {
+    height: 100%;
+}
+
+#banner-footer {
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+
+#site-main .flex-column {
+    justify-content: flex-end;
+}
+
+/*
+#site-main .banner-area .banner-title {
+    /*
+    height: 95vh;
+    padding-top: 16rem;
+
+    color: var(--color-protest-red);
+    font-family: var(--font-protest);
+    font-size: min(23vw, 10em);
+    padding-top: 0;
+}
+*/
+
+/* ------------------- /Banner Area Style ------------------------ */
